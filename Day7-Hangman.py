@@ -8,9 +8,8 @@ words = [
 ]
 GameWord = list(words[random.randint(0, 19)])
 
-print(GameWord)
-for i in range(1,10):
-    print('\n')
+for i in range(len(GameWord)):
+    input(f"What your letter? No.{i}")
 
 
 
