@@ -7,9 +7,9 @@ words = [
     "garden", "flower", "tree", "cloud", "mountain"
 ]
 GameWord = list(words[random.randint(0, 19)])
-
-for i in range(len(GameWord)):
-    input(f"What your letter? No.{i}")
-
-
-
+lives = 5
+while lives > 0:
+    print(GameWord)
+    letter = input()
+    for i in range(len(GameWord)):
+        print(GameWord[i] == letter)
