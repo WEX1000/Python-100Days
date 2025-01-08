@@ -1,12 +1,12 @@
-student_scores = {
-    'Harry': 88,
-    'Ron': 78,
-    'Hermione': 95,
-    'Draco': 75,
-    'Neville': 60
-}
+bids = {}
+loop = True
 
-student_grades = {}
-
-for i in student_scores:
-    print(i)
+while loop:
+    tempname = input("What is your name?")
+    tempbid = input("What is your bid?")
+    bids[tempname] = tempbid
+    choose = input("Is there anyone else? yes/no")
+    if choose == "no":
+        topbid = max(bids, key=lambda x: int(bids[x]))
+        print(f'The winner is {topbid}')
+        loop = False
