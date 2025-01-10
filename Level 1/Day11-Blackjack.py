@@ -3,7 +3,7 @@ import random
 #   Real cards symulation
 
 Game = True
-sh2 = ""
+
 
 
 def randomnumber():
@@ -19,6 +19,23 @@ def finalraport(pcards, dcards):
         print(f'[{dcards[i]}]', end='')
     print(f', dealer sum is {sum(dcards)}')
 
+def endgame(pcards, dcards):
+    if sum(dcards) > 21:
+        print('\nYou won')
+        finalraport(pcards, dcards)
+    elif sum(pcards) > 21:
+        print('\nYou loose')
+        finalraport(pcards, dcards)
+    else:
+        if sum(dcards) > sum(pcards):
+            print('\nYou loose')
+            finalraport(pcards, dcards)
+        elif sum(dcards) < sum(pcards):
+            print('\nYou win')
+            finalraport(pcards, dcards)
+        else:
+            print('\nDraw')
+            finalraport(pcards, dcards)
 
 while Game:
 
@@ -41,8 +58,8 @@ while Game:
 
     print(f'Your cards: [{pcards[0]},{pcards[1]}] current score: {int(pcards[0])+int(pcards[1])}')
     print(f'Dealers first card: {dfirstcard}')
-    sh = input("Stand or hit? 1/2 ")
-    if sh == 2:
+    sh = input("Stand or hit? s/h ")
+    if sh == "h":
         while True:
             pcards.append(randomnumber())
             if sum(pcards) > 21:
@@ -51,24 +68,8 @@ while Game:
             for i in range(len(pcards)):
                 print(f'[{pcards[i]}]', end='')
             print(f", your sum is {sum(pcards)}")
-            sh2 == input("Stand or hit? 1/2 ")
-            if sh2 != 2:
+            sh = input("Stand or hit? s/h ")
+            if sh != "h":
                 break
-
-
-    if sum(dcards) > 21:
-        print('\nYou won')
-        finalraport(pcards, dcards)
-    elif sum(pcards) > 21:
-        print('\nYou loose')
-        finalraport(pcards, dcards)
-    else:
-        if sum(dcards) > sum(pcards):
-            print('\nYou loose')
-            finalraport(pcards, dcards)
-        elif sum(dcards) < sum(pcards):
-            print('\nYou win')
-            finalraport(pcards, dcards)
-        else:
-            print('\nDraw')
-            finalraport(pcards, dcards)
+    endgame(pcards, dcards)
+    for i in range(1, 4): print("")
