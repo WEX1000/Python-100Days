@@ -1,12 +1,7 @@
-def is_prime(num):
-    suma = 0
-    for i in range(1, num+5):
-        if num % i == 0:
-            suma += 1
-    print(suma)
-    if suma == 2:
-        print('T')
+def odd_or_even(number):
+    if number % 2 == 0:
+        return "This is an even number."
     else:
-        print('F')
+        return "This is an odd number."
 
-is_prime(4)
+
