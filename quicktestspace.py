@@ -1,8 +1,12 @@
-sh = input("Stand or hit? s/h ")
-if sh == "h":
-    while True:
+def is_prime(num):
+    suma = 0
+    for i in range(1, num+5):
+        if num % i == 0:
+            suma += 1
+    print(suma)
+    if suma == 2:
+        print('T')
+    else:
+        print('F')
 
-
-        sh = input("Stand or hit? 1/2 ")
-        if sh != "h":
-            break
+is_prime(4)
