@@ -28,7 +28,7 @@ tim.right(90)
 tim.teleport(0, 0)
 
 
-while j < 1000:
+while j < 10:
     tim.pencolor(random.randint(1, 255), random.randint(1, 255), random.randint(1, 255))
     i = 0
     while i < 100:
