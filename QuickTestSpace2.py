@@ -1,27 +1,6 @@
-import turtle as t
 import random
-
-
-
-tim = t.Turtle()
-j = 0
-pos = []
-
-
-
-
-
-
-
-tim.right(45)
-tim.forward(100)
-
-print(tim.pos()[1])
-
-a = tim.pos()
-print(a[1])
-print(tim.pos())
-
-
-screen = t.Screen()
-screen.exitonclick()
+tabela = []
+for i in range(1000):
+    tabela.append(random.randint(1,100))
+print(max(tabela))
+print(min(tabela))
