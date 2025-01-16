@@ -1,18 +1,16 @@
-from turtle import Turtle, Screen
+import turtle as t
+import random
 
-rzuf = Turtle()
-rzuf.shape("turtle")
-rzuf.color("coral")
-i = 10
+tim = t.Turtle()
 
-while i < 1000:
-    rzuf.speed(1000)
-    rzuf.forward(i)
-    rzuf.left(150)
+########### Challenge 4 - Random Walk ########
+colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+directions = [0, 90, 180, 270]
+tim.pensize(15)
+tim.speed("fastest")
 
-    i+=10
+for _ in range(200):
+    tim.color(random.choice(colours))
+    tim.forward(30)
+    tim.setheading(random.choice(directions))
 
-
-
-my_screen = Screen()
-my_screen.exitonclick()
