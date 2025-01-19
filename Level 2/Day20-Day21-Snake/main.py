@@ -12,6 +12,14 @@ screen.tracer(0)
 snake = Snake()
 food = Food()
 
+test = Turtle()
+test.color("white")
+test.penup()
+test.shapesize(0.0001, 0.0001)
+test.goto(0, 280)
+test.write("Score", False, align='center', )
+
+
 screen.listen()
 screen.onkey(snake.up, "w")
 screen.onkey(snake.down, "s")
@@ -25,7 +33,7 @@ while game_is_on:
     snake.move()
 
     if snake.head.distance(food) < 20:
-        print("Ale dymy")
+        food.refresh()
 
 
 

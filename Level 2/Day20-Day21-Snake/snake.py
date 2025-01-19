@@ -1,5 +1,7 @@
 from turtle import Turtle
 
+from pyautogui import position
+
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 UP = 90
@@ -45,3 +47,4 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(0)
+
