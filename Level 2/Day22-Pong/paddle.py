@@ -1,6 +1,8 @@
 from time import sleep
 from turtle import Turtle
 
+PADDLE_MOVE = 50
+
 class Paddle(Turtle):
 
     def __init__(self, position):
@@ -15,10 +17,10 @@ class Paddle(Turtle):
         if self.ycor() > 240:
             pass
         else:
-            self.goto(self.xcor(), self.ycor() + 20)
+            self.goto(self.xcor(), self.ycor() + PADDLE_MOVE)
 
     def go_down(self):
         if self.ycor() < -220:
             pass
         else:
-            self.goto(self.xcor(), self.ycor() - 20)
+            self.goto(self.xcor(), self.ycor() - PADDLE_MOVE)
